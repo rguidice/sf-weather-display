@@ -30,7 +30,7 @@ sudo apt update && sudo apt full-upgrade -y
 ```sh
 sudo apt install unclutter surf matchbox-window-manager \
   xserver-xorg-video-all xserver-xorg-input-all xserver-xorg-core \
-  xinit x11-xserver-utils vim -y
+  xinit x11-xserver-utils vim python3-gpiozero -y
 ```
 
 > `surf` is used instead of Chromium because the Pi Zero W's ARMv6 CPU lacks NEON SIMD extensions required by newer Chromium builds.
@@ -89,11 +89,18 @@ xset s noblank
 unclutter &
 
 matchbox-window-manager -use_titlebar no &
+python3 ~/refresh-button.py &
 sleep 1
 surf -F -z 1.0 http://weather.local/kiosk
 EOF
 chmod +x ~/.xinitrc
 ```
+
+### 7. [_Optional_] Install refresh button
+
+Used to manually refresh the browser display if some map tiles don't render correctly. GPIO inputs monitored via `refresh_button.py`. Adjust `refresh_button.py` path in `.xinitrc` if needed.
+
+Solder a push button between GPIO 17 (pin 11) and GND (pin 9 is closest but any will work).
 
 ## References
 
