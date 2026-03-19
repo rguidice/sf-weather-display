@@ -1,1 +1,8 @@
+# Environment / OS
+.env
+.DS_Store
+
+# IDE / tools
+.claude/
+NOTES.md
 notes.txt
