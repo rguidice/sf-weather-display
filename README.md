@@ -4,6 +4,14 @@ A home weather display based on my [sf-weather-dashboard project](https://github
 
 This is a personal project I plan to set-and-forget.
 
+## todo
+* Redesign frame
+    * Top should wrap entire LCD, not just PCB backing
+    * Needs to be easier to put together while retaining flush front
+    * Add gap between screw insert and flush face so you can't screw too deep by accident
+    * Add dedicated refresh button on front or side
+    * Add fan cutout and mounting
+
 ## Hardware
 
 - Raspberry Pi Zero W
